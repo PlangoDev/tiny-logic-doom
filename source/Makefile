@@ -1,6 +1,5 @@
 # DOOM (doomgeneric, the shareware WAD inside the image) for TINY-32: RV32IM, no operating system.
 #   make              -> $(B)/doom.bin (load at address 0)
-#   make run          -> runs it on the reference model, dumping frames to frames/
 LLVM ?= /opt/homebrew/opt/llvm/bin
 LLD ?= /opt/homebrew/opt/lld/bin
 CC = $(LLVM)/clang
@@ -40,9 +39,5 @@ $(B)/doom.bin: $(B)/doom.elf
 	$(LLVM)/llvm-objcopy -O binary $< $@
 	$(LLVM)/llvm-size $<
 
-run: $(B)/doom.bin
-	mkdir -p frames
-	../rv32sim $(B)/doom.bin --frames 200 --dump frames
-
 clean:
-	rm -rf build frames
+	rm -rf build build-pal build64 build64-pal

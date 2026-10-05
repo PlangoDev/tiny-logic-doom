@@ -1,4 +1,4 @@
-// DOOM on TINY-32 / TINY-64: time and keys from ports (see rv32sim.c's memory map); the picture is i_video_tiny32.c's.
+// DOOM on TINY-32 / TINY-64: time and keys from ports; the picture is i_video_tiny32.c's.
 #include <stdint.h>
 
 #include "doomgeneric.h"

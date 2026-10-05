@@ -1,7 +1,7 @@
 // DOOM's two hottest loops (two thirds of a frame), written for an in-order RISC-V: the texture and the light table
 // kept in registers (DOOM's own loops read both from memory again for every dot, since a byte store could change
 // them), four dots a turn, and a column's texture row as the top 7 bits of a number (one shift a dot instead of two).
-// Same dots as DOOM's own (checked frame for frame: rv32sim --steady). Everything else in r_draw.c is DOOM's own.
+// Same dots as DOOM's own (checked frame for frame against the original). Everything else in r_draw.c is DOOM's own.
 #define R_DrawColumn R_DrawColumn_doom
 #define R_DrawSpan R_DrawSpan_doom
 #include "r_draw.c"
